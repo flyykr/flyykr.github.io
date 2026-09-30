@@ -1,0 +1,87 @@
+:root {
+  --primary: white;
+  --secondary: #282828;
+  --textColor: black;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* padding-bottom: 200px; */
+  background: var(--primary);
+  background-image: url(/pictures/scotland.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: system-ui, sans-serif;
+}
+h1 {
+  align-self: center;
+  color: var(--textColor);
+}
+
+.divider {
+  width: 100%;
+  background-color: var(--secondary);
+  height: 3px;
+  margin-bottom: 20px;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  max-height: 350px;
+  width: 80%;
+  background: #1c1c1c;
+  align-self: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.dropdown .header {
+  align-content: center;
+  text-align: center;
+  font-size: large;
+  height: 30px;
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #5c5c5c;
+  color: white;
+  margin-bottom: 15px;
+}
+.dropdown-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 15px;
+  color: white;
+  gap: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  
+}
+.dropdown-content img,
+label {
+  width: 100px;
+  font-size: large;
+}
+.dropdown-content label {
+  vertical-align: top;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #282828;
+    --secondary: #c2c2c2;
+    --textColor: white;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
