@@ -17,9 +17,9 @@ body {
   background-position: center;
   font-family: system-ui, sans-serif;
 }
-h1 {
+#title {
   align-self: center;
-  color: var(--textColor);
+  width: 400px;
 }
 
 .divider {
@@ -43,33 +43,45 @@ h1 {
   align-content: center;
   text-align: center;
   font-size: large;
-  height: 30px;
+  height: 50px;
   width: 100%;
-  background: none;
-  border: none;
   border-bottom: 2px solid #5c5c5c;
   color: white;
-  margin-bottom: 15px;
 }
 .dropdown-content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
   color: white;
   gap: 20px;
+  width: 100%;
+  height: 100%;
+  padding-top: 15px;
+  padding-left: 25px;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
-  
 }
-.dropdown-content img,
+
+.dropdown-content#socials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding-bottom: 15px;
+  padding-left: 0;
+}
+.dropdown-content#socials img,
 label {
   width: 100px;
   font-size: large;
 }
-.dropdown-content label {
+.dropdown-content#socials label {
   vertical-align: top;
+}
+.dropdown-content#socials .dropdown-item {
+  margin-left: 50%;
+  translate: -50% 0;
+  white-space: nowrap;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -81,7 +93,8 @@ label {
 }
 
 @media (max-width: 768px) {
-  .dropdown-content {
-    grid-template-columns: repeat(1, 1fr);
-  }
+.dropdown-content#socials {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
 }
